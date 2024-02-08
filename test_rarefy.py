@@ -6,7 +6,7 @@ def test_basic_rarefaction():
     x = np.array([10, 20, 30, 40, 50])
     rarefied = rarefy(x, depth=100, iterations=1, seed=42)
     assert len(rarefied) == len(x)
-    assert np.all(np.isnan(rarefied) == False)
+    assert sum(np.isnan(rarefied)) == 0
 
 
 def test_rarefaction_depth_greater_than_total_counts():
@@ -20,7 +20,7 @@ def test_multiple_iterations():
     x = np.array([10, 20, 30, 40, 50])
     rarefied = rarefy(x, depth=50, iterations=5, seed=42)
     assert len(rarefied) == len(x)
-    assert np.all(np.isnan(rarefied) == False)
+    assert sum(np.isnan(rarefied)) == 0
 
 
 def test_zero_counts():
