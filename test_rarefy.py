@@ -5,7 +5,7 @@ from rarefy import rarefy
 def test_basic_rarefaction():
     x = np.array([10, 20, 30, 40, 50])
     rarefied = rarefy(x, depth=100, iterations=1, seed=42)
-    assert len(rarefied) == len(x)
+    assert len(rarefied) == len(x
     assert sum(np.isnan(rarefied)) == 0
 
 
